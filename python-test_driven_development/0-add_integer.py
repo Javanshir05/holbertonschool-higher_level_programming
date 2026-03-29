@@ -1,7 +1,23 @@
 #!/usr/bin/python3
-ef add_integer(a, b=98):
-    if ((not isinstance(a, int) and not isinstance(a, float))):
+"""
+This module provides a function that adds two integers.
+The function handles type checking and casting for floats.
+"""
+
+
+def add_integer(a, b=98):
+    """
+    Adds two integers or floats (casted to integers).
+
+    Args:
+        a: The first number.
+        b: The second number (defaults to 98).
+
+    Returns:
+        The sum of a and b as an integer.
+    """
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if ((not isinstance(b, int) and not isinstance(b, float))):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    return (int(a) + int(b))
+    return int(a) + int(b)
