@@ -1,0 +1,51 @@
+The ``5-text_indentation`` module
+====================================
+
+Using ``text_indentation``
+--------------------------
+
+Import the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Standard usage with all three delimiters:
+    >>> text_indentation("Hello. How are you? Fine: Bye")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Fine:
+    <BLANKLINE>
+    Bye
+
+Testing leading and trailing spaces (they should be stripped):
+    >>> text_indentation("  Wait.   What?  Now:  Go ")
+    Wait.
+    <BLANKLINE>
+    What?
+    <BLANKLINE>
+    Now:
+    <BLANKLINE>
+    Go
+
+Testing a string with no delimiters:
+    >>> text_indentation("This is a simple sentence")
+    This is a simple sentence
+
+Testing an empty string:
+    >>> text_indentation("")
+
+Error: text is not a string:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["list", "of", "strings"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
