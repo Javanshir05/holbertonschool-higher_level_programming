@@ -1,33 +1,31 @@
 #!/usr/bin/python3
-"""
-Module 5-text_indentation
-Defines a function that prints text with specific formatting.
-"""
+# 5-text_indentation.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines a text-indentation function."""
 
 
 def text_indentation(text):
-    """
-    Prints a text with 2 new lines after each '.', '?', and ':'.
+    """Print text with two new lines after each '.', '?', and ':'.
 
     Args:
-        text (str): The string to print.
-
+        text (string): The text to print.
     Raises:
         TypeError: If text is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Flag to skip spaces after . ? : or at start of string
-    skip_space = True
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
 
-    for char in text:
-        if skip_space and char == ' ':
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
             continue
-
-        print(char, end="")
-        skip_space = False
-
-        if char in ".?:":
-            print("\n")
-            skip_space = True
+        c += 1
