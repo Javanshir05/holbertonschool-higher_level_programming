@@ -1,0 +1,50 @@
+=================================
+Tests for MyList Class
+=================================
+
+This module tests the `MyList` class which inherits from the built-in `list`.
+
+First, import the class:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Create a new instance of MyList and append integers:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+The `print_sorted` method should print the list in ascending order:
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+The original list must remain unmodified:
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Testing with an empty list:
+
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+    >>> print(empty_list)
+    []
+
+Testing with negative numbers and duplicates:
+
+    >>> neg_list = MyList()
+    >>> neg_list.append(-10)
+    >>> neg_list.append(5)
+    >>> neg_list.append(5)
+    >>> neg_list.append(-2)
+    >>> neg_list.print_sorted()
+    [-10, -2, 5, 5]
+    >>> print(neg_list)
+    [-10, 5, 5, -2]
