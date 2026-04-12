@@ -6,11 +6,7 @@ class BaseGeometry:
     """Represents base geometry."""
 
     def area(self):
-        """Method not yet implemented.
-        
-        Raises:
-            Exception: With the message 'area() is not implemented'.
-        """
+        """Method not yet implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -19,7 +15,6 @@ class BaseGeometry:
         Args:
             name (str): The name of the parameter.
             value (int): The parameter to validate.
-        
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
