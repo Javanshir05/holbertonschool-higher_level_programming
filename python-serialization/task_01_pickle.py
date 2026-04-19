@@ -48,7 +48,6 @@ class CustomObject:
             with open(filename, 'rb') as f:
                 obj = pickle.load(f)
             
-            # Ensure the loaded object is actually an instance of this class
             if not isinstance(obj, cls):
                 return None
             return obj
