@@ -8,6 +8,7 @@ import MySQLdb
 
 if __name__ == "__main__":
     # Connect to the MySQL server
+    # Broken into multiple lines to stay under 80 characters
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -19,8 +20,7 @@ if __name__ == "__main__":
     # Create a cursor object
     c = db.cursor()
 
-    # Join cities and states to filter by the state name provided in sys.argv[4]
-    # Parameterized query (%s) prevents SQL injection
+    # Join cities and states to filter by the state name
     query = """
     SELECT cities.name
     FROM cities
