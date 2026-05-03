@@ -21,17 +21,17 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # 1. Create the new State object
+    # Create the new State object
     new_state = State(name="Louisiana")
 
-    # 2. Add the object to the session (pending state)
+    # Add the object to the session
     session.add(new_state)
 
-    # 3. Commit the session to the database
+    # Commit the session to the database
     session.commit()
 
-    # 4. Print the new id
-    # SQLAlchemy automatically refreshes the object with the new ID after commit
+    # Print the new id
+    # SQLAlchemy refreshes the object with the new ID after commit
     print("{}".format(new_state.id))
 
     # Close the session
