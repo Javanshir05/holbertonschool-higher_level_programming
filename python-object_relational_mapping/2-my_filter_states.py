@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Binary is used to ensure case-sensitive matching
     query = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
              ORDER BY id ASC".format(sys.argv[4])
-    
+
     c.execute(query)
 
     # Fetch and print the results
